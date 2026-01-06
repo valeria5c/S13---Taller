@@ -251,9 +251,9 @@ void registrarVenta(){
     int idVehiculoVenta;
     int encontrado = -1; // Indica si el vehículo fue encontrado
 
-    // Ingreso del ID de la venta
-    printf("Ingrese el ID de la venta: ");
-    venta.idVenta = leerIntegerRango(1,MAX_VEHICULOS);
+    // Ingreso del nombre del vendedor
+     printf("Ingrese el nombre del vendedor: ");
+     leerCadena(venta.vendedor,15);
 
     // Ingreso del ID del vehículo a vender
     printf("Ingrese el ID del vehiculo a vender: ");
@@ -343,13 +343,13 @@ void mostrarHistorialVentas(){
 
     printf("\n========= HISTORIAL DE VENTAS =========\n");
     printf("\n%-10s %-12s %-20s %-5s %-15s %-12s\n",
-       "ID Venta", "ID Vehiculo", "Cliente", "Edad", "Precio Venta", "Fecha");
+       "Vendedor", "ID Vehiculo", "Cliente", "Edad", "Precio Venta", "Fecha");
     printf("-----------------------------------------------------------------------\n");
 
     // Lectura secuencial de todas las ventas
     while(fread(&venta, sizeof(Venta), 1, f)){
-        printf("\n%-10d %-12d %-20s %-5d %-15.2f %-12s\n",
-                                                         venta.idVenta,
+        printf("\n%-10s %-12d %-20s %-5d %-15.2f %-12s\n",
+                                                         venta.vendedor,
                                                          venta.idVehiculo,
                                                          venta.clientes.nombre,
                                                          venta.clientes.edad,
