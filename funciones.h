@@ -30,8 +30,7 @@ typedef struct{
  Estructura que representa una venta
 */
 typedef struct{
-    int idVenta;
-    char vendedor[15];
+    char vendedor[10];
     int idVehiculo;
     Cliente clientes;
     float precioVenta;
@@ -52,4 +51,5 @@ void registrarVenta();
 void guardarVenta(Venta *venta);
 void actualizarVehiculo(Vehiculo *vehiculos, int cont);
 void mostrarHistorialVentas();
+
 
