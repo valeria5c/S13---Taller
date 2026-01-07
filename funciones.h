@@ -1,3 +1,5 @@
+#ifndef FUNCIONES_H
+#define FUNCIONES_H
 
 #define MAX_VEHICULOS 100 // Número máximo de vehículos permitidos
 #define MAX_CLIENTES 100 // Número máximo de clientes permitidos
@@ -19,11 +21,11 @@ typedef struct{
  Estructura que representa un cliente
 */
 typedef struct{
-    int id;
-    char nombre[30];
+    char ci[12];
+    char nombre[20];
     int edad;
     char telefono[15];
-    char email[40];
+    char email[20];
 }Cliente;
 
 /*
@@ -32,10 +34,17 @@ typedef struct{
 typedef struct{
     char vendedor[10];
     int idVehiculo;
-    Cliente clientes;
+    char ciCliente[12]; // CI del cliente que realiza la compra
     float precioVenta;
     char fecha[15];
 }Venta;
+
+typedef struct{
+    char marcapreferida[20];
+    char tipopreferido[20];
+    int estadopreferido; // 0 = cualquiera, 1 = nuevo, 2 = usado
+    float presupuestomax; // 0 = sin límite
+}Preferencias;
 
 /* Prototipos de funciones */
 int menu();
@@ -51,6 +60,10 @@ void registrarVenta();
 void guardarVenta(Venta *venta);
 void actualizarVehiculo(Vehiculo *vehiculos, int cont);
 void mostrarHistorialVentas();
+void registrarCliente();
+void guardarCliente(Cliente *c);
+int leerClientes(Cliente *clientes);
+void seleccionarCliente(char *ci);
+void mostrarClientes();
 
-
-
+#endif
