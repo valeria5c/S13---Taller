@@ -43,22 +43,32 @@ int main(int argc, char *argv[])
             break;
 
         case 4:
+            // Registra un cliente
+            registrarCliente();
+            break;
+        
+        case 5:
+            // Muestra los clientes registrados
+            mostrarClientes();
+            break;
+
+        case 6:
             // Registra una venta de un vehículo
             registrarVenta();
             break;
 
-        case 5:
+        case 7:
             // Muestra el historial completo de ventas realizadas
             mostrarHistorialVentas();
             break;
 
-        case 6:
+        case 8:
             // Finaliza la ejecución del sistema
             printf("Saliendo del sistema...\n");
             return 0;
 
         default:
-            // Caso de seguridad (no debería ocurrir)
+            // Caso de seguridad
             break;
         }
 
@@ -70,4 +80,3 @@ int main(int argc, char *argv[])
 
     return 0; // Fin del programa
 }
-
