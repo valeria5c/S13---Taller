@@ -1,5 +1,6 @@
 
 #define MAX_VEHICULOS 100 // Número máximo de vehículos permitidos
+#define MAX_CLIENTES 100 // Número máximo de clientes permitidos
 
 /*
  Estructura que representa un vehículo
@@ -18,12 +19,11 @@ typedef struct{
  Estructura que representa un cliente
 */
 typedef struct{
+    int id;
     char nombre[30];
     int edad;
-    char marcapreferida[20];
-    char tipopreferido[20];
-    int estadopreferido; // 1-nuevo 2-usado
-    float presupuestomax;
+    char telefono[15];
+    char email[40];
 }Cliente;
 
 /*
@@ -51,5 +51,6 @@ void registrarVenta();
 void guardarVenta(Venta *venta);
 void actualizarVehiculo(Vehiculo *vehiculos, int cont);
 void mostrarHistorialVentas();
+
 
 
